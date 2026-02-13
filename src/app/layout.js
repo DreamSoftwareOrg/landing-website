@@ -1,5 +1,6 @@
 import { Space_Grotesk, Cairo } from "next/font/google";
 import "./globals.css";
+import "./styles_legal.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CursorGlow from "@/components/CursorGlow";

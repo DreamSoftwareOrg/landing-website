@@ -1,10 +1,12 @@
 export default function Terms() {
     return (
-        <main className="terms-container">
-            <h1>Terms of Service</h1>
-            <div className="terms-content">
-                <p>Last updated: October 26, 2026</p>
+        <main className="legal-page">
+            <div className="legal-hero">
+                <h1>Terms of Service</h1>
+                <p className="last-updated">Last updated: October 26, 2026</p>
+            </div>
 
+            <div className="legal-content">
                 <p>Welcome to DreamSoftware. These Terms of Service (&quot;Terms&quot;) govern your use of the DreamSoftware website and services.</p>
 
                 <h2>1. Acceptance of Terms</h2>
@@ -39,7 +41,7 @@ export default function Terms() {
                 <p>These terms and conditions are governed by and construed in accordance with the laws of Global and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
 
                 <h2>9. Contact Us</h2>
-                <p>If you have any questions about these Terms, please contact us at terms@DreamSoftware.com.</p>
+                <p>If you have any questions about these Terms, please contact us at <a href="mailto:terms@DreamSoftware.com">terms@DreamSoftware.com</a>.</p>
             </div>
         </main>
     );

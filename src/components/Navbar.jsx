@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
@@ -11,6 +12,7 @@ export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,6 +35,19 @@ export default function Navbar() {
         setIsMobileMenuOpen(false);
     };
 
+    const handleScroll = (e, targetId) => {
+        if (pathname === '/') {
+            e.preventDefault();
+            const element = document.getElementById(targetId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+            closeMobileMenu();
+        } else {
+            closeMobileMenu();
+        }
+    };
+
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
             <div className="logo">
@@ -42,8 +57,8 @@ export default function Navbar() {
             </div>
 
             <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-                <Link href="/#work" onClick={closeMobileMenu}>{t('nav.work')}</Link>
-                <Link href="/#services" onClick={closeMobileMenu}>{t('nav.services')}</Link>
+                <Link href="/#services" onClick={(e) => handleScroll(e, 'services')}>{t('nav.services')}</Link>
+                <Link href="/#work" onClick={(e) => handleScroll(e, 'work')}>{t('nav.work')}</Link>
 
                 <button
                     onClick={toggleTheme}
@@ -63,7 +78,7 @@ export default function Navbar() {
                     <Globe size={16} />
                 </button>
 
-                <Link href="/#contact" className="btn-primary small" onClick={closeMobileMenu}>
+                <Link href="/#contact" className="btn-primary small" onClick={(e) => handleScroll(e, 'contact')}>
                     {t('nav.quote')}
                 </Link>
             </div>

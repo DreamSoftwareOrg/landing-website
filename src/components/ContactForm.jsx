@@ -11,15 +11,35 @@ export default function ContactForm() {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Placeholder for actual submission logic
-        // In a real Next.js app, this would likely hit an API route
+        const formData = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            phone: e.target.phone.value,
+            message: e.target.message.value
+        };
 
-        // Simulating delay
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
 
-        alert('Message sent successfully! (Simulation)');
-        e.target.reset();
-        setIsSubmitting(false);
+            if (response.ok) {
+                alert('Message sent successfully!');
+                e.target.reset();
+            } else {
+                const data = await response.json();
+                alert(data.error || 'Failed to send message.');
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            alert('An error occurred. Please try again later.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (

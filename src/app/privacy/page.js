@@ -1,10 +1,12 @@
 export default function Privacy() {
     return (
-        <main className="privacy-container">
-            <h1>Privacy Policy</h1>
-            <div className="privacy-content">
-                <p>Last updated: October 26, 2026</p>
+        <main className="legal-page">
+            <div className="legal-hero">
+                <h1>Privacy Policy</h1>
+                <p className="last-updated">Last updated: October 26, 2026</p>
+            </div>
 
+            <div className="legal-content">
                 <p>At DreamSoftware, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
 
                 <h2>1. Information We Collect</h2>
@@ -31,7 +33,7 @@ export default function Privacy() {
                 <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.</p>
 
                 <h2>5. Contact Us</h2>
-                <p>If you have questions or comments about this policy, you may email us at privacy@DreamSoftware.com or by post to:</p>
+                <p>If you have questions or comments about this policy, you may email us at <a href="mailto:privacy@DreamSoftware.com">privacy@DreamSoftware.com</a> or by post to:</p>
                 <p>DreamSoftware Solutions<br />123 Innovation Drive<br />Tech City, TC 90210</p>
             </div>
         </main>
