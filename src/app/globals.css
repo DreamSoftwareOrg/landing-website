@@ -1,14 +1,16 @@
 :root {
-  --font-main: 'Space Grotesk', sans-serif;
-  --font-ar: 'Cairo', sans-serif;
+  --font-main: var(--font-outfit), 'Outfit', sans-serif;
+  --font-heading: var(--font-jakarta), 'Plus Jakarta Sans', sans-serif;
+  --font-mono: var(--font-mono), 'Space Mono', monospace;
+  --font-ar: var(--font-cairo), 'Cairo', sans-serif;
   --bg-color: #0b0b0e;
   --text-color: #e0e0e0;
   --text-muted: #aaa;
   --accent-blue: #00f0ff;
   --accent-purple: #9d00ff;
   --accent-pink: #ff007f;
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.03);
   --glass-blur: 15px;
   --navbar-bg: rgba(11, 11, 14, 0.8);
   --navbar-scroll-bg: rgba(11, 11, 14, 0.95);
@@ -429,7 +431,7 @@ section {
 .service-card {
   text-align: center;
   padding: 2.5rem 1.5rem;
-  transition: transform 0.3s ease;
+  transition: all 0.5s ease;
 }
 
 .service-card:hover {

@@ -1,4 +1,8 @@
-export const translations = {
+'use client';
+
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+const translations = {
     en: {
         nav: {
             work: "Work",
@@ -236,3 +240,53 @@ export const translations = {
         }
     }
 };
+
+const LanguageContext = createContext();
+
+export function LanguageProvider({ children }) {
+    const [language, setLanguage] = useState('en');
+
+    useEffect(() => {
+        const storedLang = localStorage.getItem('lang');
+        if (storedLang) {
+            setLanguage(storedLang);
+            document.documentElement.lang = storedLang;
+            document.documentElement.dir = storedLang === 'ar' ? 'rtl' : 'ltr';
+            if (storedLang === 'ar') {
+                document.body.classList.add('rtl');
+            } else {
+                document.body.classList.remove('rtl');
+            }
+        }
+    }, []);
+
+    const toggleLanguage = () => {
+        const newLang = language === 'en' ? 'ar' : 'en';
+        setLanguage(newLang);
+        localStorage.setItem('lang', newLang);
+        document.documentElement.lang = newLang;
+        document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
+        if (newLang === 'ar') {
+            document.body.classList.add('rtl');
+        } else {
+            document.body.classList.remove('rtl');
+        }
+    };
+
+    const t = (key) => {
+        const keys = key.split('.');
+        let value = translations[language];
+        for (const k of keys) {
+            if (value) value = value[k];
+        }
+        return value || key;
+    };
+
+    return (
+        <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+            {children}
+        </LanguageContext.Provider>
+    );
+}
+
+export const useLanguage = () => useContext(LanguageContext);
