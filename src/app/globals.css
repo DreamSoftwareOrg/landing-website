@@ -836,8 +836,9 @@ section {
 /* Footer */
 footer {
   border-top: 1px solid var(--glass-border);
-  padding: 3rem 10%;
+  padding: 3rem 0 0;
   background: var(--footer-bg);
+  overflow: hidden;
 }
 
 .footer-content {
@@ -846,6 +847,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  padding: 0 10%;
 }
 
 .footer-brand h4 {
@@ -870,6 +872,30 @@ footer {
 
 .footer-links a:hover {
   color: white;
+}
+
+.footer-bottom {
+  margin-top: 3rem;
+  width: 100%;
+  line-height: 0.85;
+  font-size: 13vw;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--text-color);
+  user-select: none;
+  padding: 0 4vw 4vw;
+  box-sizing: border-box;
+}
+
+.footer-bar {
+  padding: 1.2rem 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* Animations */

@@ -117,8 +117,8 @@ const translations = {
         },
         footer: {
             rights: "© 2026 DreamSoftware Solutions.",
-            privacy: "Privacy",
-            terms: "Terms",
+            privacy: "Privacy Policy",
+            terms: "Terms and Conditions",
             address: "Karadat-Mariam, Baghdad"
         }
     },
@@ -236,8 +236,8 @@ const translations = {
         },
         footer: {
             rights: "© 2026 للحلول البرمجية DreamSoftware.",
-            privacy: "الخصوصية",
-            terms: "الشروط",
+            privacy: "سياسة الخصوصية",
+            terms: "الشروط والاحكام",
             address: "كرادة مريم، بغداد"
         }
     }

@@ -30,8 +30,8 @@ export default function Footer() {
                         </div>
                         <div className="footer-links" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#aaa', fontSize: '0.9rem' }}>
                             <Mail size={16} />
-                            <a href="mailto:contact@dreamsoftware.com" target="_blank">
-                                <span>contact@dreamsoftware.com</span>
+                            <a href="mailto:husseinshakir81@gmail.com" target="_blank">
+                                <span>husseinshakir81@gmail.com</span>
                             </a>
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#aaa', fontSize: '0.9rem' }}>
@@ -40,12 +40,17 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div className="footer-bottom">
+                Dream<span className="accent">Software</span>
+            </div>
+            <div className="footer-bar">
                 <div className="footer-links">
                     <Link href="/privacy">{t('footer.privacy')}</Link>
                     <Link href="/terms">{t('footer.terms')}</Link>
-                    <a href="https://instagram.com/dreamsoftware" target="_blank" rel="noopener noreferrer"><Instagram size={20} /></a>
-                    {/* <a href="https://www.linkedin.com/company/dreamsoftware" target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></a> */}
+                    <a href="https://instagram.com/dreamsoftware_iq" target="_blank" rel="noopener noreferrer">
+                        <Instagram size={18} />
+                    </a>
                 </div>
             </div>
         </footer>
