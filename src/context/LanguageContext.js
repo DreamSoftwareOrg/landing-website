@@ -246,19 +246,17 @@ const translations = {
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-    const [language, setLanguage] = useState('en');
+    const [language, setLanguage] = useState('ar');
 
     useEffect(() => {
-        const storedLang = localStorage.getItem('lang');
-        if (storedLang) {
-            setLanguage(storedLang);
-            document.documentElement.lang = storedLang;
-            document.documentElement.dir = storedLang === 'ar' ? 'rtl' : 'ltr';
-            if (storedLang === 'ar') {
-                document.body.classList.add('rtl');
-            } else {
-                document.body.classList.remove('rtl');
-            }
+        const storedLang = localStorage.getItem('lang') || 'ar';
+        setLanguage(storedLang);
+        document.documentElement.lang = storedLang;
+        document.documentElement.dir = storedLang === 'ar' ? 'rtl' : 'ltr';
+        if (storedLang === 'ar') {
+            document.body.classList.add('rtl');
+        } else {
+            document.body.classList.remove('rtl');
         }
     }, []);
 
